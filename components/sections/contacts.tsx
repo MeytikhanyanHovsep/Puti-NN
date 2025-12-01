@@ -11,29 +11,29 @@ export default function Contacts({}: Props) {
     const [loading, setLoading] = useState(false);
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        setLoading(true);
+        // setLoading(true);
 
-        const form = new FormData(e.target);
-        const data = {
-            name: form.get("name"),
-            phone: form.get("phone"),
-            message: form.get("message"),
-        };
+        // const form = new FormData(e.target);
+        // const data = {
+        //     name: form.get("name"),
+        //     phone: form.get("phone"),
+        //     message: form.get("message"),
+        // };
 
-        const res = await fetch("/api/send", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-        });
+        // const res = await fetch("/api/send", {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(data),
+        // });
 
-        setLoading(false);
+        // setLoading(false);
 
-        if (res.ok) {
-            alert("Заявка отправлена!");
-            e.target.reset();
-        } else {
-            alert("Ошибка при отправке");
-        }
+        // if (res.ok) {
+        //     alert("Заявка отправлена!");
+        //     e.target.reset();
+        // } else {
+        //     alert("Ошибка при отправке");
+        // }
     };
     return (
         <section
