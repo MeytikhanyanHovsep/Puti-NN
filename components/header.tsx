@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, Menu, PhoneCall } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 type Props = {
     menuItems: any;
@@ -34,14 +35,19 @@ export default function Header({ menuItems }: Props) {
         >
             <nav className="container py-[30px] max-sm:py-[20px] flex max-lg:flex-col items-center justify-between">
                 <div className="flex max-lg:w-full max-lg:justify-between">
-                    <h1>
-                        <Link
-                            href="/"
-                            className="primary text-[25px] max-sm:text-[22px] font-bold"
-                        >
-                            Пути-НН
-                        </Link>
-                    </h1>
+                    <Link
+                        href="/"
+                        className="primary max-lg:w-full flex text-[25px] items-center gap-[10px] max-sm:text-[22px] font-bold"
+                    >
+                        <Image
+                            src="/logo.png"
+                            alt="Logo"
+                            width={80}
+                            className="max-md:max-w-[65px] object-contain"
+                            height={80}
+                        />
+                        <h1>Пути-НН</h1>
+                    </Link>
                     <button
                         onClick={() => {
                             setMenuToggle(!menuToggle);
@@ -122,7 +128,7 @@ export default function Header({ menuItems }: Props) {
                                                             key={idx}
                                                             className="hover:bg-gray-50 border-b last:border-0 border-gray-100"
                                                         >
-                                                            <a
+                                                            <Link
                                                                 href={`#service-${
                                                                     idx + 1
                                                                 }`}
@@ -137,7 +143,7 @@ export default function Header({ menuItems }: Props) {
                                                                 }}
                                                             >
                                                                 Услуга {idx + 1}
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                     )
                                                 )}
@@ -146,32 +152,32 @@ export default function Header({ menuItems }: Props) {
                                     </AnimatePresence>
                                 </div>
                             ) : (
-                                <a
-                                    onClick={() => setMenuToggle(false)}
+                                <Link
                                     href={"#" + key}
                                     className="font-md hover:text-[#30AFA7] text-primary transition-colors duration-200 flex items-center"
+                                    onClick={() => setMenuToggle(false)}
                                 >
                                     {menuItems[key]}
-                                </a>
+                                </Link>
                             )}
                         </li>
                     ))}
                     <li className="hidden max-lg:block font-[25px]">
                         <a
-                            href="tel:+79107982890"
+                            href="tel:+79101247443"
                             className=" primary flex items-center gap-[5px] font-bold text-[18px]"
                         >
                             <PhoneCall />
-                            <p>+7 (910) 798-28-90</p>
+                            <p>+7 910 124-74-43</p>
                         </a>
                     </li>
                 </motion.ul>
                 <a
-                    href="tel:+79107982890"
+                    href="tel:+79101247443"
                     className=" primary flex items-center max-lg:hidden gap-[5px] font-bold text-[20px]"
                 >
                     <PhoneCall />
-                    <p className=" text-[22px]">+7 (910) 798-28-90</p>
+                    <p className=" text-[22px]">+7 910 124-74-43</p>
                 </a>
             </nav>
         </header>
