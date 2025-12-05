@@ -11,7 +11,7 @@ export default function Footer({ menuItems }: Props) {
                 <ul className="flex flex-col gap-[10px]">
                     <li className="flex items-center gap-[10px]">
                         <Image
-                            src="/logo.png"
+                            src="/logo-icon.png"
                             alt="Logo"
                             width={60}
                             className="max-md:max-w-[50px] object-contain"

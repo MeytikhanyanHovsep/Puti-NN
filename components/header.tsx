@@ -40,7 +40,7 @@ export default function Header({ menuItems }: Props) {
                         className="primary max-lg:w-full flex text-[25px] items-center gap-[10px] max-sm:text-[22px] font-bold"
                     >
                         <Image
-                            src="/logo.png"
+                            src="/logo-icon.png"
                             alt="Logo"
                             width={80}
                             className="max-md:max-w-[65px] object-contain"
