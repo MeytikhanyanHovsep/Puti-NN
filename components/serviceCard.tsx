@@ -21,6 +21,8 @@ export default function ServiceCard({
 
     return (
         <div
+            itemScope
+            itemType="https://schema.org/Service"
             id={`service-${ind + 1}`}
             className={
                 "shadow-lg rounded-[10px] border-[3px]  flex flex-col items-center gap-[5px] p-[20px] max-sm:gap-0 pt-[25px] max-h-max max-md:px-[10px] max-md:pt-[20px] " +
@@ -38,11 +40,14 @@ export default function ServiceCard({
             >
                 {service.icon}
             </span>
-            <h2 className="text-[18px] max-md:text-[16px] text-center font-bold my-[10px]">
+            <h2
+                itemProp="name"
+                className="text-[18px] max-md:text-[16px] text-center font-bold my-[10px]"
+            >
                 {service.title}
             </h2>
 
-            <p className="gray-color max-md:text-[14px]">
+            <p itemProp="description" className="gray-color max-md:text-[14px]">
                 {service.description}
             </p>
 
@@ -59,7 +64,7 @@ export default function ServiceCard({
                             Ключевые преимущества:
                         </li>
                         {service.keys.map((key, idx) => (
-                            <li key={idx} className="mb-1">
+                            <li itemProp="offers" key={idx} className="mb-1">
                                 {key}
                             </li>
                         ))}

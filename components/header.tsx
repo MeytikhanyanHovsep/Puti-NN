@@ -33,7 +33,10 @@ export default function Header({ menuItems }: Props) {
                 (menuToggle ? " max-lg:bg-white" : "")
             }
         >
-            <nav className="container py-[30px] max-sm:py-[20px] flex max-lg:flex-col items-center justify-between">
+            <nav
+                aria-label="Главное меню сайта"
+                className="container py-[30px] max-sm:py-[20px] flex max-lg:flex-col items-center justify-between"
+            >
                 <div className="flex max-lg:w-full max-lg:justify-between">
                     <Link
                         href="/"
@@ -59,6 +62,7 @@ export default function Header({ menuItems }: Props) {
                     </button>
                 </div>
                 <motion.ul
+                    role="menu"
                     className={
                         "flex max-lg:flex-col  max-lg:w-full max-lg:items-start  items-center gap-[30px] max-lg:overflow-hidden transition-opacity duration-200 max-lg:order-3 lg:pt-0! lg:h-auto! lg:opacity-100!"
                     }
@@ -78,6 +82,7 @@ export default function Header({ menuItems }: Props) {
                                 <div className="relative">
                                     <button
                                         className="font-md cursor-pointer hover:text-[#30AFA7] text-primary transition-colors flex items-center gap-1 duration-200"
+                                        title={`Перейти к разделу ${menuItems[key]}`}
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             setServicesToggle(!servicesToggle);
@@ -155,6 +160,7 @@ export default function Header({ menuItems }: Props) {
                                 <Link
                                     href={"#" + key}
                                     className="font-md hover:text-[#30AFA7] text-primary transition-colors duration-200 flex items-center"
+                                    title={`Перейти к разделу ${menuItems[key]}`}
                                     onClick={() => setMenuToggle(false)}
                                 >
                                     {menuItems[key]}

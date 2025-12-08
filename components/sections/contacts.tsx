@@ -216,8 +216,6 @@ export default function Contacts({}: Props) {
                                     checkZoomRange: true,
                                     zoomMargin: [70, 70],
                                 });
-                                // checkZoomRange: карта не будет сильно приближать
-                                // zoomMargin: отступ от краев
                             }
                         }}
                     >

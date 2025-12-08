@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
 @import "tailwindcss";
-
-
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .gray-color {
@@ -21,35 +25,24 @@ html {
 
 .light-primary-bg {
   background: #ecfefc;
-
 }
 
 .light-gold-bg {
   background: #fef3de;
-
 }
 
 .gold {
   color: #ffbb1d;
 }
 
-
 .gold-bg {
   background: #ffbb1d;
-}
-
-
-body {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400, 800;
-  font-style: normal;
 }
 
 .common-button:hover {
   background: transparent !important;
   color: #30AFA7;
 }
-
 
 .container {
   width: 100%;
@@ -73,23 +66,20 @@ textarea {
   outline: none;
 }
 
-
-@media screen and (min-width:1380px) {
+@media screen and (min-width: 1380px) {
   .main-image {
     max-width: 500px !important;
   }
 }
 
-
-
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
   .container {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width: 640px) {
   .container {
     padding-left: 15px;
     padding-right: 15px;

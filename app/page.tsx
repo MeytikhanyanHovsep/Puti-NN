@@ -5,6 +5,7 @@ import Main from "@/components/sections/main";
 import Reviews from "@/components/sections/reviews";
 import Services from "@/components/sections/services";
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 
 type Props = {};
 
@@ -95,6 +96,75 @@ export default function Home({}: Props) {
 
     return (
         <>
+            <Head>
+                {/* Базовые теги */}
+                <title>
+                    {isTargetCity === "новгород"
+                        ? "Предрейсовые осмотры в Нижнем Новгороде — Пути-НН"
+                        : isTargetCity === "саратов"
+                        ? "Предрейсовые осмотры в Саратове — Пути-НН"
+                        : "Пути-НН — предрейсовые осмотры транспортных средств"}
+                </title>
+
+                <meta
+                    name="description"
+                    content={
+                        isTargetCity === "новгород"
+                            ? "Предрейсовый медицинский и технический осмотр транспорта в Нижнем Новгороде. Работаем легально, быстро, с выездом."
+                            : isTargetCity === "саратов"
+                            ? "Предрейсовый медосмотр и техосмотр транспорта в Саратове. Лицензии, контроль, выезд."
+                            : "Профессиональный предрейсовый медицинский и технический осмотр транспорта. Работаем официально."
+                    }
+                />
+
+                {/* Canonical */}
+                <link rel="canonical" href="https://puti-nn.ru" />
+
+                {/* OpenGraph */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://puti-nn.ru" />
+                <meta
+                    property="og:title"
+                    content={
+                        isTargetCity === "новгород"
+                            ? "Предрейсовые осмотры в Нижнем Новгороде"
+                            : isTargetCity === "саратов"
+                            ? "Предрейсовые осмотры в Саратове"
+                            : "Пути-НН — предрейсовые осмотры"
+                    }
+                />
+                <meta
+                    property="og:description"
+                    content="Предрейсовые медосмотры и техосмотры транспорта. Лицензии, контроль, соблюдение закона."
+                />
+                <meta property="og:image" content="/og-image.jpg" />
+
+                {/* Structured Data */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "LocalBusiness",
+                            name: "Пути-НН",
+                            url: "https://puti-nn.ru",
+                            image: "https://puti-nn.ru/og-image.jpg",
+                            address: {
+                                "@type": "PostalAddress",
+                                addressCountry: "RU",
+                            },
+                            description:
+                                "Предрейсовые медицинские и технические осмотры транспортных средств.",
+                            areaServed: [
+                                "Россия",
+                                "Нижний Новгород",
+                                "Саратов",
+                            ],
+                        }),
+                    }}
+                />
+            </Head>
+
             <Main geoAllowed={geoAllowed} isTargetCity={isTargetCity} />
             <About />
             <Services geoAllowed={geoAllowed} isTargetCity={isTargetCity} />
