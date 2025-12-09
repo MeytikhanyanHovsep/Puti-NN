@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Header from "./header";
 import Footer from "./footer";
 
@@ -13,13 +13,11 @@ export default function Components({ children }: Props) {
         reviews: "Отзывы",
         contacts: "Контакты",
     };
-   
-    
-    
 
     return (
         <>
             <Header menuItems={menuItems} />
+            <span></span>
             {children}
             <Footer menuItems={menuItems} />
         </>

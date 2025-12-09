@@ -115,7 +115,9 @@ export default function Services({ geoAllowed, isTargetCity }: Props) {
                 id="services"
                 className="container pt-[70px] flex flex-col items-start gap-[40px] max-sm:gap-[20px]"
             >
-                <Title as="h2">Основные услуги</Title>
+                <Title as="h2">
+                    Основные <span className="primary">Услуги</span>{" "}
+                </Title>
                 <div className="grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-md:gap-y-[7px] max-md:gap-x-[5px] grid-cols-3 gap-[20px]">
                     {services.map((e: any, i: number) => (
                         <ServiceCard service={e} ind={i} key={i} />

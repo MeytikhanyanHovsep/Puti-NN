@@ -6,7 +6,7 @@ type Props = { menuItems: any };
 
 export default function Footer({ menuItems }: Props) {
     return (
-        <footer className="light-primary-bg py-[60px] max-sm:pt-[40px]">
+        <footer className="light-primary-bg  py-[60px] max-sm:pt-[40px]">
             <div className="container max-lg:grid-cols-2 max-sm:grid-cols-1 gap-[40px] grid grid-cols-3 justify-between">
                 <ul className="flex flex-col gap-[10px]">
                     <li className="flex items-center gap-[10px]">

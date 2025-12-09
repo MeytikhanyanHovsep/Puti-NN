@@ -28,14 +28,14 @@ export default function Header({ menuItems }: Props) {
     return (
         <header
             className={
-                " w-full absolute max-lg:fixed top-0 bg-transparent transition-colors duration-500 z-100 shadow-[#efefef] " +
+                " w-full absolute max-lg:fixed top-0 bg-transparent transition-colors duration-200 z-100 shadow-[#efefef] " +
                 (scrollPosition ? "" : "max-lg:bg-white max-lg:shadow-md") +
                 (menuToggle ? " max-lg:bg-white" : "")
             }
         >
             <nav
                 aria-label="Главное меню сайта"
-                className="container py-[30px] max-sm:py-[20px] flex max-lg:flex-col items-center justify-between"
+                className="container py-[30px] max-sm:py-[15px] flex max-lg:flex-col items-center justify-between"
             >
                 <div className="flex max-lg:w-full max-lg:justify-between">
                     <Link
@@ -45,9 +45,9 @@ export default function Header({ menuItems }: Props) {
                         <Image
                             src="/logo-icon.png"
                             alt="Logo"
-                            width={80}
-                            className="max-md:max-w-[65px] object-contain"
-                            height={80}
+                            width={70}
+                            className="max-md:max-w-[55px] object-contain"
+                            height={70}
                         />
                         <h1>Пути-НН</h1>
                     </Link>

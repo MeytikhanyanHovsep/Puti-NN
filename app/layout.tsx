@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ru">
-            <body>
+            <body className="min-h-screen h-full flex flex-col justify-between">
                 <Components>{children}</Components>
             </body>
         </html>
