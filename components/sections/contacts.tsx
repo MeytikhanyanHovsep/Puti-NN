@@ -4,6 +4,7 @@ import Title from "../common/title";
 import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import SendForm from "./send-form";
 
 type Props = {};
 
@@ -160,49 +161,7 @@ export default function Contacts({}: Props) {
                     </div>
                 </li>
             </ul>
-            <form
-                onSubmit={handleSubmit}
-                className="flex flex-col items-center max-sm:items-stretch max-lg:gap-[10px] gap-[20px]"
-            >
-                <Title>
-                    Оставить <span className="primary">Заявку</span>
-                </Title>
-                <input
-                    name="name"
-                    type="text"
-                    className="text-[18px] max-sm:text-[16px] w-full border-[3px] rounded-[10px] py-[10px] px-[15px] mt-[10px] border-[#ffe9c0]"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Имя или Компания"
-                />
-                <input
-                    name="phone"
-                    type="tel"
-                    className="text-[18px] max-sm:text-[16px] w-full border-[3px] rounded-[10px] py-[10px] px-[15px] border-[#ffe9c0]"
-                    value={form.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="Номер телефона"
-                />
-                <textarea
-                    name="message"
-                    placeholder="Сообщение"
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                    className="text-[18px] max-sm:text-[16px] h-full w-full border-[3px] rounded-[10px] py-[10px] px-[15px] border-[#ffe9c0]"
-                />
-                <button
-                    type="submit"
-                    className="px-[50px] cursor-pointer max-md:px-[30px] max-sm:text-[15px] max-sm:border-2 max-md:py-[10px] shadow-lg text-center text-white tracking-[0.8px] capitalize primary-bg py-[15px] rounded-[7px] duration-200 transition-colors common-button border-3 border-[#30AFA7] hover:text-[#30AFA7]! font-bold"
-                >
-                    {status === "idle" && "Оставить заявку"}
-                    {status === "loading" && "Отправляется…"}
-                    {status === "success" && "Заявка отправлена!"}
-                    {status === "error" && "Ошибка отправки."}
-                </button>
-            </form>
+            <SendForm />
             <div className="w-full border-[#ffe9c0] border-[3px] max-md:h-[200px] h-[400px] rounded-xl overflow-hidden">
                 <YMaps>
                     <Map
